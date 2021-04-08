@@ -18,9 +18,10 @@ class TimerManager: ObservableObject {
     @Published var hours: Int = 0
     @Published var minutes: Int = 0
     @Published var seconds: Int = 0
-    private var totalTimeInSeconds: Int = 0
+    @Published var interruptionCount: Int = 0
     
-    var timer = Timer()
+    private var totalTimeInSeconds: Int = 0
+    private var timer = Timer()
     
     func start() {
         mode = .running
@@ -39,5 +40,19 @@ class TimerManager: ObservableObject {
         seconds = 0
         minutes = 0
         hours = 0
+        interruptionCount = 0
+    }
+    
+    func addInterruption() {
+        if (mode == timerMode.running) {
+            interruptionCount += 1
+        }
+        
+    }
+    
+    func subtractInterruption() {
+        if (interruptionCount > 0) {
+            interruptionCount -= 1
+        }
     }
 }

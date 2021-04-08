@@ -8,21 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var timerManager: TimerManager
+    
     var body: some View {
         TabView {
-            AnalyticsView()
-                .tabItem {
-                    Label("Analytics", systemImage: "chart.pie")
-                }
-            
             TimerView()
                 .tabItem {
-                    Label("Timer", systemImage: "timer")
+                    Label("timer", systemImage: "timer")
                 }
             
-            PlannerView()
+            AnalyticsView()
                 .tabItem {
-                    Label("Planner", systemImage: "calendar.circle")
+                    Label("analytics", systemImage: "chart.pie")
                 }
         }
     }
@@ -31,6 +28,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+            .environmentObject(TimerManager())
     }
 }

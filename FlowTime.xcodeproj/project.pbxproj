@@ -17,6 +17,10 @@
 		BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7EB261840D400E7D18D /* AnalyticsView.swift */; };
 		BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F02618425C00E7D18D /* PlannerView.swift */; };
 		BC29F7FA2618476400E7D18D /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F92618476400E7D18D /* TimerManager.swift */; };
+		BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F824261D303D00E7D18D /* StartStopButton.swift */; };
+		BC29F843261E4B3500E7D18D /* InterruptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F842261E4B3500E7D18D /* InterruptionButton.swift */; };
+		BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */; };
+		BC29F879261E91C300E7D18D /* FlowTimeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F878261E91C300E7D18D /* FlowTimeSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		BC29F7EB261840D400E7D18D /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		BC29F7F02618425C00E7D18D /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		BC29F7F92618476400E7D18D /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		BC29F824261D303D00E7D18D /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
+		BC29F842261E4B3500E7D18D /* InterruptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionButton.swift; sourceTree = "<group>"; };
+		BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionBadge.swift; sourceTree = "<group>"; };
+		BC29F878261E91C300E7D18D /* FlowTimeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTimeSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7B826183F5500E7D18D /* FlowTimeApp.swift */,
-				BC29F7BA26183F5500E7D18D /* ContentView.swift */,
-				BC29F8002618478100E7D18D /* Analytics */,
-				BC29F7FE2618476D00E7D18D /* Timer */,
-				BC29F7FF2618477800E7D18D /* Planner */,
+				BC29F877261E916600E7D18D /* Models */,
+				BC29F81D261D2F3100E7D18D /* Views */,
 				BC29F7BC26183F5500E7D18D /* Assets.xcassets */,
 				BC29F7C126183F5500E7D18D /* Info.plist */,
 				BC29F7BE26183F5500E7D18D /* Preview Content */,
@@ -145,6 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7E6261840BE00E7D18D /* TimerView.swift */,
+				BC29F824261D303D00E7D18D /* StartStopButton.swift */,
+				BC29F842261E4B3500E7D18D /* InterruptionButton.swift */,
+				BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */,
 				BC29F7F92618476400E7D18D /* TimerManager.swift */,
 			);
 			path = Timer;
@@ -164,6 +173,25 @@
 				BC29F7EB261840D400E7D18D /* AnalyticsView.swift */,
 			);
 			path = Analytics;
+			sourceTree = "<group>";
+		};
+		BC29F81D261D2F3100E7D18D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC29F7BA26183F5500E7D18D /* ContentView.swift */,
+				BC29F8002618478100E7D18D /* Analytics */,
+				BC29F7FE2618476D00E7D18D /* Timer */,
+				BC29F7FF2618477800E7D18D /* Planner */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC29F877261E916600E7D18D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC29F878261E91C300E7D18D /* FlowTimeSession.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +325,12 @@
 			files = (
 				BC29F7E7261840BE00E7D18D /* TimerView.swift in Sources */,
 				BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */,
+				BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */,
+				BC29F879261E91C300E7D18D /* FlowTimeSession.swift in Sources */,
 				BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */,
+				BC29F843261E4B3500E7D18D /* InterruptionButton.swift in Sources */,
 				BC29F7FA2618476400E7D18D /* TimerManager.swift in Sources */,
+				BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
 			);
