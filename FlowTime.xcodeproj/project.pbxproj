@@ -18,9 +18,12 @@
 		BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F02618425C00E7D18D /* PlannerView.swift */; };
 		BC29F7FA2618476400E7D18D /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F92618476400E7D18D /* TimerManager.swift */; };
 		BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F824261D303D00E7D18D /* StartStopButton.swift */; };
-		BC29F843261E4B3500E7D18D /* InterruptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F842261E4B3500E7D18D /* InterruptionButton.swift */; };
+		BC29F843261E4B3500E7D18D /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F842261E4B3500E7D18D /* PlusButton.swift */; };
 		BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */; };
 		BC29F879261E91C300E7D18D /* FlowTimeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F878261E91C300E7D18D /* FlowTimeSession.swift */; };
+		BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */; };
+		BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F895261FABA500E7D18D /* RoundedButton.swift */; };
+		BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +61,12 @@
 		BC29F7F02618425C00E7D18D /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		BC29F7F92618476400E7D18D /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		BC29F824261D303D00E7D18D /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
-		BC29F842261E4B3500E7D18D /* InterruptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionButton.swift; sourceTree = "<group>"; };
+		BC29F842261E4B3500E7D18D /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionBadge.swift; sourceTree = "<group>"; };
 		BC29F878261E91C300E7D18D /* FlowTimeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTimeSession.swift; sourceTree = "<group>"; };
+		BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionButton.swift; sourceTree = "<group>"; };
+		BC29F895261FABA500E7D18D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeWithAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +158,8 @@
 			children = (
 				BC29F7E6261840BE00E7D18D /* TimerView.swift */,
 				BC29F824261D303D00E7D18D /* StartStopButton.swift */,
-				BC29F842261E4B3500E7D18D /* InterruptionButton.swift */,
 				BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */,
+				BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */,
 				BC29F7F92618476400E7D18D /* TimerManager.swift */,
 			);
 			path = Timer;
@@ -179,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7BA26183F5500E7D18D /* ContentView.swift */,
+				BC29F885261FA7F800E7D18D /* Buttons */,
 				BC29F8002618478100E7D18D /* Analytics */,
 				BC29F7FE2618476D00E7D18D /* Timer */,
 				BC29F7FF2618477800E7D18D /* Planner */,
@@ -192,6 +199,16 @@
 				BC29F878261E91C300E7D18D /* FlowTimeSession.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BC29F885261FA7F800E7D18D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				BC29F842261E4B3500E7D18D /* PlusButton.swift */,
+				BC29F895261FABA500E7D18D /* RoundedButton.swift */,
+				BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,10 +344,13 @@
 				BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */,
 				BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */,
 				BC29F879261E91C300E7D18D /* FlowTimeSession.swift in Sources */,
+				BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */,
 				BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */,
-				BC29F843261E4B3500E7D18D /* InterruptionButton.swift in Sources */,
+				BC29F843261E4B3500E7D18D /* PlusButton.swift in Sources */,
 				BC29F7FA2618476400E7D18D /* TimerManager.swift in Sources */,
+				BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */,
 				BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */,
+				BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
 			);

@@ -47,7 +47,6 @@ class TimerManager: ObservableObject {
         if (mode == timerMode.running) {
             interruptionCount += 1
         }
-        
     }
     
     func subtractInterruption() {
