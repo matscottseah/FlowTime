@@ -13,31 +13,39 @@ struct TimerView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             TextField("what are you focusing on?", text: $task)
                 .multilineTextAlignment(.center)
-                .padding()
             
             Text(String(format: "%02d:%02d:%02d", timerManager.hours, timerManager.minutes, timerManager.seconds))
                 .font(.system(size: 40, weight: .regular, design: .default))
                 .foregroundColor(Color("Gray"))
-                .padding(.bottom, 50)
+            
+            Spacer()
             
             InterruptionBadge()
                 .offset(x: 75)
                 .padding(.bottom, -25)
+                .disabled(timerManager.interruptionCount <= 0)
             
             InterruptionButton()
-                .padding(.bottom, 75)
+                .disabled(timerManager.mode == .stopped)
+            
+            Spacer()
             
             StartStopButton()
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            
+            Spacer()
         }
+        
     }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
-            .environmentObject(TimerManager())
+        Group {
+            TimerView()
+                .environmentObject(TimerManager())
+        }
     }
 }

@@ -9,25 +9,49 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var timerManager: TimerManager
+    @State var selectedTab: Int = 0
+    
+    var tabButtons = ["timer", "chart.pie"]
     
     var body: some View {
-        TabView {
-            TimerView()
-                .tabItem {
-                    Label("timer", systemImage: "timer")
+        VStack {
+            ZStack {
+                switch selectedTab {
+                case 0:
+                    TimerView()
+                case 1:
+                    AnalyticsView()
+                default:
+                    Text("Default")
                 }
+            }
             
-            AnalyticsView()
-                .tabItem {
-                    Label("analytics", systemImage: "chart.pie")
+            Spacer()
+            
+            HStack {
+                ForEach(0..<tabButtons.count) { index in
+                    Button(action: {selectedTab = index}, label: {
+                        Spacer()
+                        Image(systemName: tabButtons[index])
+                            .font(.system(size: 24, weight: .semibold))
+                            .foregroundColor(selectedTab == index ? Color("Gray") : Color(UIColor.systemGray3))
+                        Spacer()
+                    })
                 }
+            }
         }
+        .ignoresSafeArea(.keyboard, edges: .all)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environmentObject(TimerManager())
+        Group {
+            ContentView()
+                .environmentObject(TimerManager())
+            ContentView()
+                .preferredColorScheme(.dark)
+                .environmentObject(TimerManager())
+        }
     }
 }
