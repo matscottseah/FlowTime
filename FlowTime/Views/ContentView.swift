@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var timerManager: TimerManager
+    @EnvironmentObject var flowTimeManager: FlowTimeManager
     @State var selectedTab: Int = 0
     
     var tabButtons = ["timer", "chart.pie"]
@@ -48,10 +48,10 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-                .environmentObject(TimerManager())
+                .environmentObject(FlowTimeManager())
             ContentView()
                 .preferredColorScheme(.dark)
-                .environmentObject(TimerManager())
+                .environmentObject(FlowTimeManager())
         }
     }
 }

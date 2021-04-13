@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct InterruptionButton: View {
-    
-    @EnvironmentObject var timerManager: TimerManager
+    @EnvironmentObject var flowTimeManager: FlowTimeManager
     
     var body: some View {
-        PlusButton(action: {timerManager.addInterruption()},
+        PlusButton(action: {flowTimeManager.addInterruption()},
                    width: UIScreen.main.bounds.width / 2,
                    height: UIScreen.main.bounds.width / 2)
     }

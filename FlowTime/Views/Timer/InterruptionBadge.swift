@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct InterruptionBadge: View {
-    @EnvironmentObject var timerManager: TimerManager
+    @EnvironmentObject var flowTimeManager: FlowTimeManager
     
     var body: some View {
-        BadgeWithAction(action: { self.timerManager.subtractInterruption() },
-                        badgeText: String(self.timerManager.interruptionCount),
+        BadgeWithAction(action: { self.flowTimeManager.subtractInterruption() },
+                        badgeText: String(self.flowTimeManager.interruptionCount),
                         width: 30,
                         height: 20)
     }
@@ -21,6 +21,6 @@ struct InterruptionBadge: View {
 struct InterruptionBadge_Previews: PreviewProvider {
     static var previews: some View {
         InterruptionBadge()
-            .environmentObject(TimerManager())
+            .environmentObject(FlowTimeManager())
     }
 }

@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct FlowTimeApp: App {
-    @StateObject var timerManager = TimerManager()
+    @Environment(\.scenePhase) var scenePhase
+    @StateObject var flowTimeManager = FlowTimeManager()
+    let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(timerManager)
+                .environmentObject(flowTimeManager)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }
+        .onChange(of: scenePhase) { _ in
+            persistenceController.save()
         }
     }
 }

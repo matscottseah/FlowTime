@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct AnalyticsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        entity: Flow.entity(),
+        sortDescriptors: []
+    ) var flows: FetchedResults<Flow>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(flows) { (flow: Flow) in
+                Text(flow.task ?? "unknown")
+            }
+        }
     }
 }
 
