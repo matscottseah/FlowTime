@@ -23,7 +23,6 @@ struct PersistenceController {
             flow.stopTime = Date()
             flow.task = "Test task"
             flow.interruptionCount = 13
-            flow.elapsedTime = 500
         }
 
         return controller
@@ -43,16 +42,19 @@ struct PersistenceController {
         }
     }
     
-    func save() {
+    func save() -> Bool {
         let context = container.viewContext
+        var saveError: NSError?
 
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                saveError = error as NSError
+                fatalError("Unresolved error \(saveError!), \(saveError!.userInfo)")
             }
         }
+        
+        return saveError == nil
     }
 }

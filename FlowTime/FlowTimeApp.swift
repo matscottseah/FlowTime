@@ -20,7 +20,7 @@ struct FlowTimeApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            var _ = persistenceController.save()
         }
     }
 }

@@ -14,14 +14,17 @@ enum timerMode {
 
 class FlowTimeManager: ObservableObject {
     @Published var mode: timerMode = .stopped
-    @Published var hours: Int = 0
-    @Published var minutes: Int = 0
-    @Published var seconds: Int = 0
-    @Published var interruptionCount: Int = 0
+    
     @Published var elapsedTime: Int = 0
+    @Published var seconds: Int = 0
+    @Published var minutes: Int = 0
+    @Published var hours: Int = 0
+    
+    @Published var interruptionCount: Int32 = 0
     @Published var task: String = ""
     
     private var timer = Timer()
+    private var flow: Flow?
     
     func start() {
         mode = .running
@@ -31,21 +34,19 @@ class FlowTimeManager: ObservableObject {
             self.minutes = Int((self.elapsedTime / 60) % 60)
             self.hours = Int(self.elapsedTime / 3600)
         }
+        
+        flow = FlowController.createFlow()
     }
     
     func stop() {
         mode = .stopped
         timer.invalidate()
+        flow = FlowController.update(flow: flow!, stopTime: Date(), task: task, interruptionCount: interruptionCount)
         reset()
     }
     
     private func reset() {
-        elapsedTime = 0
-        seconds = 0
-        minutes = 0
-        hours = 0
-        interruptionCount = 0
-        task = ""
+        (elapsedTime, seconds, minutes, hours, interruptionCount, task) = (0, 0, 0, 0, 0, "")
     }
     
     func addInterruption() {

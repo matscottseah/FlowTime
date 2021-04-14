@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC119DA1262171C6001F56EA /* FlowHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC119DA0262171C6001F56EA /* FlowHistory.swift */; };
 		BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC119DC0262182A8001F56EA /* TaskTextField.swift */; };
 		BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC119E2B2624F7B8001F56EA /* FlowTime.xcdatamodeld */; };
 		BC119E332624F991001F56EA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC119E322624F991001F56EA /* PersistenceController.swift */; };
@@ -27,6 +26,7 @@
 		BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */; };
 		BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F895261FABA500E7D18D /* RoundedButton.swift */; };
 		BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */; };
+		BC85715826268ACF0058087F /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85715726268ACF0058087F /* FlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC119DA0262171C6001F56EA /* FlowHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowHistory.swift; sourceTree = "<group>"; };
 		BC119DC0262182A8001F56EA /* TaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextField.swift; sourceTree = "<group>"; };
 		BC119E2C2624F7B8001F56EA /* FlowTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowTime.xcdatamodel; sourceTree = "<group>"; };
 		BC119E322624F991001F56EA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionButton.swift; sourceTree = "<group>"; };
 		BC29F895261FABA500E7D18D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeWithAction.swift; sourceTree = "<group>"; };
+		BC85715726268ACF0058087F /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				BC119E322624F991001F56EA /* PersistenceController.swift */,
+				BC85715726268ACF0058087F /* FlowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,11 +134,10 @@
 			children = (
 				BC29F7B826183F5500E7D18D /* FlowTimeApp.swift */,
 				BC29F7F92618476400E7D18D /* FlowTimeManager.swift */,
-				BC119E2B2624F7B8001F56EA /* FlowTime.xcdatamodeld */,
-				BC29F877261E916600E7D18D /* Models */,
 				BC29F81D261D2F3100E7D18D /* Views */,
 				BC119E312624F97C001F56EA /* Controllers */,
 				BC29F7BC26183F5500E7D18D /* Assets.xcassets */,
+				BC119E2B2624F7B8001F56EA /* FlowTime.xcdatamodeld */,
 				BC29F7C126183F5500E7D18D /* Info.plist */,
 				BC29F7BE26183F5500E7D18D /* Preview Content */,
 			);
@@ -208,14 +208,6 @@
 				BC29F7FF2618477800E7D18D /* Planner */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BC29F877261E916600E7D18D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BC119DA0262171C6001F56EA /* FlowHistory.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		BC29F885261FA7F800E7D18D /* Buttons */ = {
@@ -360,9 +352,9 @@
 				BC29F7E7261840BE00E7D18D /* TimerView.swift in Sources */,
 				BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */,
 				BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */,
-				BC119DA1262171C6001F56EA /* FlowHistory.swift in Sources */,
 				BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */,
 				BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */,
+				BC85715826268ACF0058087F /* FlowController.swift in Sources */,
 				BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */,
 				BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */,
 				BC29F843261E4B3500E7D18D /* PlusButton.swift in Sources */,
