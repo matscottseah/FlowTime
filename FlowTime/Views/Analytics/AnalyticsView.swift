@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct AnalyticsView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        entity: Flow.entity(),
-        sortDescriptors: []
-    ) var flows: FetchedResults<Flow>
+    @EnvironmentObject var flowTimeManager: FlowTimeManager
+    var flows = FlowController.getAllFlows()
     
     var body: some View {
-        List {
-            ForEach(flows) { (flow: Flow) in
-                Text(flow.task ?? "unknown")
+        VStack {
+            if (flowTimeManager.mode == .running) {
+                TimerText(timerSize: .small)
+            }
+            
+            TodayView()
+            
+            List {
+                ForEach(flows) { (flow: Flow) in
+                    Text(flow.task ?? "unknown")
+                }
             }
         }
     }
@@ -26,5 +31,6 @@ struct AnalyticsView: View {
 struct AnalyticsView_Previews: PreviewProvider {
     static var previews: some View {
         AnalyticsView()
+            .environmentObject(FlowTimeManager())
     }
 }

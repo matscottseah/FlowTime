@@ -15,14 +15,21 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
         let context = controller.container.viewContext
+        
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
 
         for _ in 0..<10 {
             let flow = Flow(context: context)
+            let randomHour = Int.random(in: 1...12)
+            let randomMinute = Int.random(in: 1...12)
+            let randomSecond = Int.random(in: 1...12)
+            
             flow.id = UUID()
             flow.startTime = Date()
-            flow.stopTime = Date()
-            flow.task = "Test task"
-            flow.interruptionCount = 13
+            flow.stopTime = calendar.date(byAdding: DateComponents(hour: randomHour, minute: randomMinute, second: randomSecond), to: flow.startTime!)
+            flow.task = randomString(length: 10)
+            flow.interruptionCount = Int32.random(in: 1...100)
         }
 
         return controller

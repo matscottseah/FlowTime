@@ -15,9 +15,7 @@ struct TimerView: View {
             Spacer()
             TaskTextField()
             
-            Text(String(format: "%02d:%02d:%02d", flowTimeManager.hours, flowTimeManager.minutes, flowTimeManager.seconds))
-                .font(.system(size: 40, weight: .regular, design: .default))
-                .foregroundColor(Color("Gray"))
+            TimerText(timerSize: .large)
             
             Spacer()
             

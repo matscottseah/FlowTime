@@ -8,7 +8,11 @@
 import CoreData
 
 class FlowController {
-    static let viewContext = (PersistenceController.shared.container as NSPersistentContainer).viewContext
+    //  Use in production
+//    static let viewContext = (PersistenceController.shared.container as NSPersistentContainer).viewContext
+    
+    // Use in preview
+    static let viewContext = PersistenceController.preview.container.viewContext
     
     static func createFlow() -> Flow {
         let flow = Flow(context: viewContext)
@@ -35,5 +39,63 @@ class FlowController {
         
         var _ = PersistenceController.shared.save()
         return flow
+    }
+    
+    static func getAllFlows() -> [Flow] {
+        let flows: [Flow]
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flow")
+        
+        do {
+            flows = try viewContext.fetch(fetchRequest) as! [Flow]
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
+        
+        return flows
+    }
+    
+    static func getFlowsByDate(date: Date) -> [Flow] {
+        let flows: [Flow]
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flow")
+        
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        
+        let dateFrom = calendar.startOfDay(for: date)
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
+
+        let fromPredicate = NSPredicate(format: "%@ >= %@", date as NSDate, dateFrom as NSDate)
+        let toPredicate = NSPredicate(format: "%@ < %@", date as NSDate, dateTo! as NSDate)
+        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        
+        fetchRequest.predicate = datePredicate
+        
+        do {
+            flows = try viewContext.fetch(fetchRequest) as! [Flow]
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
+        
+        return flows
+    }
+    
+    static func getTotalFlowsByDate(date: Date) -> Int {
+        let flowsForDate = self.getFlowsByDate(date: date)
+        return flowsForDate.count
+    }
+    
+    static func getTotalFlowTimeByDate(date: Date) -> DateComponents {
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        
+        let flowsForDate = self.getFlowsByDate(date: date)
+        let totalTime = flowsForDate.reduce(0) { $0 + $1.stopTime!.timeIntervalSince($1.startTime!) }
+        
+        return dateComponentsFromTimeInterval(timeInterval: totalTime)
+    }
+    
+    static func getTotalInterruptionsByDate(date: Date) -> Int {
+        let flowsForDate = self.getFlowsByDate(date: date)
+        return Int(flowsForDate.reduce(0) { $0 + $1.interruptionCount })
     }
 }

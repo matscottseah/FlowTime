@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct StartStopButton: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var flowTimeManager: FlowTimeManager
     @State var showingAlert = false
     

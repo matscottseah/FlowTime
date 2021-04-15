@@ -27,6 +27,9 @@
 		BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F895261FABA500E7D18D /* RoundedButton.swift */; };
 		BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */; };
 		BC85715826268ACF0058087F /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85715726268ACF0058087F /* FlowController.swift */; };
+		BC8571662626B87C0058087F /* TimerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571652626B87C0058087F /* TimerText.swift */; };
+		BC85716B2626BD600058087F /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85716A2626BD600058087F /* TodayView.swift */; };
+		BC8571732627E48E0058087F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571722627E48E0058087F /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		BC29F895261FABA500E7D18D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeWithAction.swift; sourceTree = "<group>"; };
 		BC85715726268ACF0058087F /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		BC8571652626B87C0058087F /* TimerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerText.swift; sourceTree = "<group>"; };
+		BC85716A2626BD600058087F /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		BC8571722627E48E0058087F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 			children = (
 				BC29F7B826183F5500E7D18D /* FlowTimeApp.swift */,
 				BC29F7F92618476400E7D18D /* FlowTimeManager.swift */,
+				BC8571722627E48E0058087F /* Helper.swift */,
 				BC29F81D261D2F3100E7D18D /* Views */,
 				BC119E312624F97C001F56EA /* Controllers */,
 				BC29F7BC26183F5500E7D18D /* Assets.xcassets */,
@@ -174,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7E6261840BE00E7D18D /* TimerView.swift */,
+				BC8571652626B87C0058087F /* TimerText.swift */,
 				BC119DC0262182A8001F56EA /* TaskTextField.swift */,
 				BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */,
 				BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */,
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7EB261840D400E7D18D /* AnalyticsView.swift */,
+				BC85716A2626BD600058087F /* TodayView.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -353,15 +362,18 @@
 				BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */,
 				BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */,
 				BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */,
+				BC85716B2626BD600058087F /* TodayView.swift in Sources */,
 				BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */,
 				BC85715826268ACF0058087F /* FlowController.swift in Sources */,
 				BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */,
+				BC8571732627E48E0058087F /* Helper.swift in Sources */,
 				BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */,
 				BC29F843261E4B3500E7D18D /* PlusButton.swift in Sources */,
 				BC119E332624F991001F56EA /* PersistenceController.swift in Sources */,
 				BC29F7FA2618476400E7D18D /* FlowTimeManager.swift in Sources */,
 				BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */,
 				BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */,
+				BC8571662626B87C0058087F /* TimerText.swift in Sources */,
 				BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
