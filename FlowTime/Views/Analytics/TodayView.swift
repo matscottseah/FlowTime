@@ -14,30 +14,30 @@ struct TodayView: View {
     var todaysTotalinterruptions = FlowController.getTotalInterruptionsByDate(date: Date())
     
     var body: some View {
-        HStack {
-            Spacer()
+        VStack(alignment: .leading) {
+            Text("today")
+                .font(.title2)
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: -5, trailing: 0))
             
-            VStack {
-                Text(String(todaysTotalFlows))
-                Text("flows")
+            HStack {
+                Spacer()
+                
+                TodayViewitem(mainText: String(todaysTotalFlows), subText: "flows")
+                
+                Spacer()
+                
+                TodayViewitem(mainText: timeStringFromDateComponents(dateComponents: todaysTotalFlowTime, withSeconds: false), subText: "flow time")
+                
+                Spacer()
+                              
+                TodayViewitem(mainText: String(todaysTotalinterruptions), subText: "interruptions")
+                
+                Spacer()
             }
-            
-            Spacer()
-            
-            VStack {
-                Text(timeStringFromDateComponents(dateComponents: todaysTotalFlowTime))
-                Text("flow time")
-            }
-            
-            Spacer()
-            
-            VStack {
-                Text(String(todaysTotalinterruptions))
-                Text("interruptions")
-            }
-            
-            Spacer()
         }
+        .frame(width: .infinity)
+        .background(Color(UIColor.systemGray6))
+        .cornerRadius(20)
     }
 }
 
@@ -45,5 +45,6 @@ struct TodayView_Previews: PreviewProvider {
     
     static var previews: some View {
         TodayView()
+            .environmentObject(FlowTimeManager())
     }
 }

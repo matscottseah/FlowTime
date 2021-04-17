@@ -30,6 +30,7 @@
 		BC8571662626B87C0058087F /* TimerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571652626B87C0058087F /* TimerText.swift */; };
 		BC85716B2626BD600058087F /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85716A2626BD600058087F /* TodayView.swift */; };
 		BC8571732627E48E0058087F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571722627E48E0058087F /* Helper.swift */; };
+		BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571A1262AA7680058087F /* TodayViewitem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		BC8571652626B87C0058087F /* TimerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerText.swift; sourceTree = "<group>"; };
 		BC85716A2626BD600058087F /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		BC8571722627E48E0058087F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BC8571A1262AA7680058087F /* TodayViewitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewitem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			children = (
 				BC29F7EB261840D400E7D18D /* AnalyticsView.swift */,
 				BC85716A2626BD600058087F /* TodayView.swift */,
+				BC8571A1262AA7680058087F /* TodayViewitem.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */,
 				BC8571662626B87C0058087F /* TimerText.swift in Sources */,
 				BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */,
+				BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
 			);

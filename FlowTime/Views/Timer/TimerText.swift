@@ -17,7 +17,7 @@ struct TimerText: View {
     var timerSize: fontSize
     
     var body: some View {
-        Text(timeStringFromDateComponents(dateComponents: DateComponents(hour: flowTimeManager.hours, minute: flowTimeManager.minutes, second: flowTimeManager.seconds)))
+        Text(timeStringFromDateComponents(dateComponents: DateComponents(hour: flowTimeManager.hours, minute: flowTimeManager.minutes, second: flowTimeManager.seconds), withSeconds: true))
             .font(timerSize == .large ? .system(size: 40, weight: .regular, design: .default) : .title)
             .foregroundColor(Color("Gray"))
     }

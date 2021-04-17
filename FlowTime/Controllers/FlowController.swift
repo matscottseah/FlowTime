@@ -89,7 +89,13 @@ class FlowController {
         calendar.timeZone = NSTimeZone.local
         
         let flowsForDate = self.getFlowsByDate(date: date)
-        let totalTime = flowsForDate.reduce(0) { $0 + $1.stopTime!.timeIntervalSince($1.startTime!) }
+        
+        var totalTime: Double = 0
+        for flow in flowsForDate {
+            if let startTime = flow.startTime, let stopTime = flow.stopTime {
+                totalTime += stopTime.timeIntervalSince(startTime)
+            }
+        }
         
         return dateComponentsFromTimeInterval(timeInterval: totalTime)
     }

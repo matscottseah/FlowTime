@@ -15,9 +15,14 @@ func dateComponentsFromTimeInterval(timeInterval: TimeInterval) -> DateComponent
     return DateComponents(hour: hours, minute: minutes, second: seconds)
 }
 
-func timeStringFromDateComponents(dateComponents: DateComponents) -> String {
-    return String(format: "%02d:%02d:%02d", dateComponents.hour!, dateComponents.minute!, dateComponents.second!)
+func timeStringFromDateComponents(dateComponents: DateComponents, withSeconds: Bool) -> String {
+    if (withSeconds) {
+        return String(format: "%02d:%02d:%02d", dateComponents.hour!, dateComponents.minute!, dateComponents.second!)
+    } else {
+        return String(format: "%02d:%02d", dateComponents.hour!, dateComponents.minute!)
+    }
 }
+    
 
 func randomString(length: Int) -> String {
   let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

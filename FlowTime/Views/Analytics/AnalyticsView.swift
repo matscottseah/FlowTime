@@ -13,11 +13,12 @@ struct AnalyticsView: View {
     
     var body: some View {
         VStack {
-            if (flowTimeManager.mode == .running) {
+            if flowTimeManager.mode == .running {
                 TimerText(timerSize: .small)
             }
             
             TodayView()
+                .padding()
             
             List {
                 ForEach(flows) { (flow: Flow) in
