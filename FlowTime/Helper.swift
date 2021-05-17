@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 func dateComponentsFromTimeInterval(timeInterval: TimeInterval) -> DateComponents {
     let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
@@ -23,8 +24,30 @@ func timeStringFromDateComponents(dateComponents: DateComponents, withSeconds: B
     }
 }
     
-
 func randomString(length: Int) -> String {
   let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
   return String((0..<length).map{ _ in letters.randomElement()! })
+}
+
+extension View {
+    func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
+         if conditional {
+             return AnyView(content(self))
+         } else {
+             return AnyView(self)
+         }
+     }
+}
+
+let formatter: DateComponentsFormatter = {
+    let f = DateComponentsFormatter()
+    f.allowedUnits = [.hour, .minute, .second]
+    f.zeroFormattingBehavior = .pad
+    return f
+}()
+
+extension TimeInterval {
+    var formatted: String {
+        return formatter.string(from: self)!
+    }
 }

@@ -16,21 +16,22 @@
 		BC29F7C026183F5500E7D18D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC29F7BF26183F5500E7D18D /* Preview Assets.xcassets */; };
 		BC29F7CB26183F5500E7D18D /* FlowTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7CA26183F5500E7D18D /* FlowTimeTests.swift */; };
 		BC29F7D626183F5600E7D18D /* FlowTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7D526183F5600E7D18D /* FlowTimeUITests.swift */; };
-		BC29F7E7261840BE00E7D18D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7E6261840BE00E7D18D /* TimerView.swift */; };
+		BC29F7E7261840BE00E7D18D /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7E6261840BE00E7D18D /* FlowView.swift */; };
 		BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7EB261840D400E7D18D /* AnalyticsView.swift */; };
-		BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F02618425C00E7D18D /* PlannerView.swift */; };
 		BC29F7FA2618476400E7D18D /* FlowTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F92618476400E7D18D /* FlowTimeManager.swift */; };
 		BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F824261D303D00E7D18D /* StartStopButton.swift */; };
-		BC29F843261E4B3500E7D18D /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F842261E4B3500E7D18D /* PlusButton.swift */; };
-		BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */; };
-		BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */; };
-		BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F895261FABA500E7D18D /* RoundedButton.swift */; };
-		BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */; };
+		BC4379A1263B68B400C3476F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4379A0263B68B400C3476F /* TaskView.swift */; };
+		BC58FC32263D2D060041DF7F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58FC31263D2D060041DF7F /* ClockView.swift */; };
+		BC80D22A26509CD900048694 /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC80D22926509CD900048694 /* StopWatchView.swift */; };
+		BC80D22C26509CE100048694 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC80D22B26509CE100048694 /* TimerView.swift */; };
 		BC85715826268ACF0058087F /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85715726268ACF0058087F /* FlowController.swift */; };
-		BC8571662626B87C0058087F /* TimerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571652626B87C0058087F /* TimerText.swift */; };
 		BC85716B2626BD600058087F /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85716A2626BD600058087F /* TodayView.swift */; };
 		BC8571732627E48E0058087F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571722627E48E0058087F /* Helper.swift */; };
 		BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571A1262AA7680058087F /* TodayViewitem.swift */; };
+		BC86CEF72640DEF500BA59F0 /* ClockHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86CEF62640DEF500BA59F0 /* ClockHandView.swift */; };
+		BCD53D332646567400B0FAB8 /* FlowButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD53D322646567400B0FAB8 /* FlowButtons.swift */; };
+		BCD53D352646575900B0FAB8 /* StylizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD53D342646575900B0FAB8 /* StylizedButton.swift */; };
+		BCFFE15E2640D33D008C46D7 /* ClockFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFFE15D2640D33D008C46D7 /* ClockFaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,21 +67,22 @@
 		BC29F7D126183F5600E7D18D /* FlowTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC29F7D526183F5600E7D18D /* FlowTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTimeUITests.swift; sourceTree = "<group>"; };
 		BC29F7D726183F5600E7D18D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC29F7E6261840BE00E7D18D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		BC29F7E6261840BE00E7D18D /* FlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		BC29F7EB261840D400E7D18D /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
-		BC29F7F02618425C00E7D18D /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		BC29F7F92618476400E7D18D /* FlowTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTimeManager.swift; sourceTree = "<group>"; };
 		BC29F824261D303D00E7D18D /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
-		BC29F842261E4B3500E7D18D /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
-		BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionBadge.swift; sourceTree = "<group>"; };
-		BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionButton.swift; sourceTree = "<group>"; };
-		BC29F895261FABA500E7D18D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeWithAction.swift; sourceTree = "<group>"; };
+		BC4379A0263B68B400C3476F /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		BC58FC31263D2D060041DF7F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		BC80D22926509CD900048694 /* StopWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
+		BC80D22B26509CE100048694 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BC85715726268ACF0058087F /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
-		BC8571652626B87C0058087F /* TimerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerText.swift; sourceTree = "<group>"; };
 		BC85716A2626BD600058087F /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		BC8571722627E48E0058087F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BC8571A1262AA7680058087F /* TodayViewitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewitem.swift; sourceTree = "<group>"; };
+		BC86CEF62640DEF500BA59F0 /* ClockHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandView.swift; sourceTree = "<group>"; };
+		BCD53D322646567400B0FAB8 /* FlowButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowButtons.swift; sourceTree = "<group>"; };
+		BCD53D342646575900B0FAB8 /* StylizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylizedButton.swift; sourceTree = "<group>"; };
+		BCFFE15D2640D33D008C46D7 /* ClockFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,25 +181,17 @@
 			path = FlowTimeUITests;
 			sourceTree = "<group>";
 		};
-		BC29F7FE2618476D00E7D18D /* Timer */ = {
+		BC29F7FE2618476D00E7D18D /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				BC29F7E6261840BE00E7D18D /* TimerView.swift */,
-				BC8571652626B87C0058087F /* TimerText.swift */,
-				BC119DC0262182A8001F56EA /* TaskTextField.swift */,
-				BC29F85D261E6F5D00E7D18D /* InterruptionBadge.swift */,
-				BC29F880261FA7DE00E7D18D /* InterruptionButton.swift */,
+				BC29F7E6261840BE00E7D18D /* FlowView.swift */,
+				BCD53D322646567400B0FAB8 /* FlowButtons.swift */,
+				BC80D22926509CD900048694 /* StopWatchView.swift */,
+				BC80D22B26509CE100048694 /* TimerView.swift */,
+				BCFFE15A2640D24A008C46D7 /* Clock */,
 				BC29F824261D303D00E7D18D /* StartStopButton.swift */,
 			);
-			path = Timer;
-			sourceTree = "<group>";
-		};
-		BC29F7FF2618477800E7D18D /* Planner */ = {
-			isa = PBXGroup;
-			children = (
-				BC29F7F02618425C00E7D18D /* PlannerView.swift */,
-			);
-			path = Planner;
+			path = Flow;
 			sourceTree = "<group>";
 		};
 		BC29F8002618478100E7D18D /* Analytics */ = {
@@ -214,22 +208,31 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7BA26183F5500E7D18D /* ContentView.swift */,
-				BC29F885261FA7F800E7D18D /* Buttons */,
+				BCD53D342646575900B0FAB8 /* StylizedButton.swift */,
 				BC29F8002618478100E7D18D /* Analytics */,
-				BC29F7FE2618476D00E7D18D /* Timer */,
-				BC29F7FF2618477800E7D18D /* Planner */,
+				BC4379A5263B68C200C3476F /* Task */,
+				BC29F7FE2618476D00E7D18D /* Flow */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BC29F885261FA7F800E7D18D /* Buttons */ = {
+		BC4379A5263B68C200C3476F /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				BC29F842261E4B3500E7D18D /* PlusButton.swift */,
-				BC29F895261FABA500E7D18D /* RoundedButton.swift */,
-				BC29F8A0261FB27100E7D18D /* BadgeWithAction.swift */,
+				BC4379A0263B68B400C3476F /* TaskView.swift */,
+				BC119DC0262182A8001F56EA /* TaskTextField.swift */,
 			);
-			path = Buttons;
+			path = Task;
+			sourceTree = "<group>";
+		};
+		BCFFE15A2640D24A008C46D7 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				BC58FC31263D2D060041DF7F /* ClockView.swift */,
+				BC86CEF62640DEF500BA59F0 /* ClockHandView.swift */,
+				BCFFE15D2640D33D008C46D7 /* ClockFaceView.swift */,
+			);
+			path = Clock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,25 +364,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC29F7E7261840BE00E7D18D /* TimerView.swift in Sources */,
+				BC80D22C26509CE100048694 /* TimerView.swift in Sources */,
+				BC29F7E7261840BE00E7D18D /* FlowView.swift in Sources */,
+				BC58FC32263D2D060041DF7F /* ClockView.swift in Sources */,
+				BC86CEF72640DEF500BA59F0 /* ClockHandView.swift in Sources */,
 				BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */,
-				BC29F7F12618425C00E7D18D /* PlannerView.swift in Sources */,
 				BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */,
 				BC85716B2626BD600058087F /* TodayView.swift in Sources */,
-				BC29F85E261E6F5D00E7D18D /* InterruptionBadge.swift in Sources */,
+				BC80D22A26509CD900048694 /* StopWatchView.swift in Sources */,
+				BCFFE15E2640D33D008C46D7 /* ClockFaceView.swift in Sources */,
 				BC85715826268ACF0058087F /* FlowController.swift in Sources */,
-				BC29F8A1261FB27100E7D18D /* BadgeWithAction.swift in Sources */,
 				BC8571732627E48E0058087F /* Helper.swift in Sources */,
 				BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */,
-				BC29F843261E4B3500E7D18D /* PlusButton.swift in Sources */,
 				BC119E332624F991001F56EA /* PersistenceController.swift in Sources */,
 				BC29F7FA2618476400E7D18D /* FlowTimeManager.swift in Sources */,
-				BC29F896261FABA500E7D18D /* RoundedButton.swift in Sources */,
 				BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */,
-				BC8571662626B87C0058087F /* TimerText.swift in Sources */,
-				BC29F881261FA7DE00E7D18D /* InterruptionButton.swift in Sources */,
+				BC4379A1263B68B400C3476F /* TaskView.swift in Sources */,
 				BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */,
+				BCD53D352646575900B0FAB8 /* StylizedButton.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
+				BCD53D332646567400B0FAB8 /* FlowButtons.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

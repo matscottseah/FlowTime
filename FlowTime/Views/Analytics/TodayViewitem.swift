@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TodayViewitem: View {
-    @EnvironmentObject var flowTimeManager: FlowTimeManager
+//    @EnvironmentObject var flowTimeManager: FlowTimeManager
     var mainText: String
     var subText: String
     
@@ -34,6 +34,6 @@ struct TodayViewitem: View {
 struct TodayViewitem_Previews: PreviewProvider {
     static var previews: some View {
         TodayViewitem(mainText: "53:00", subText: "interruptions")
-            .environmentObject(FlowTimeManager())
+//            .environmentObject(FlowTimeManager())
     }
 }
