@@ -44,7 +44,7 @@ struct StylizedButton: View {
                 .foregroundColor(fill ? Color("White") : Color("Gray"))
                 .frame(width: width, height: height, alignment: .center)
                 .padding()
-                .background(fill ? AnyView(Capsule().fill(Color("Gray"))) : AnyView(Capsule().stroke(lineWidth: 3).fill(Color("Gray"))))
+                .background(fill ? AnyView(Capsule().fill(Color("Gray"))) : AnyView(Capsule().stroke(lineWidth: 3).fill(Color("Gray")).opacity(0.3)))
                 .disabled(!isActive)
             }
         case .circle:
@@ -67,7 +67,7 @@ struct StylizedButton: View {
                 .foregroundColor(fill ? Color("White") : Color("Gray"))
                 .frame(width: width, height: width, alignment: .center)
                 .padding()
-                .background(fill ? AnyView(Circle().fill(Color("Gray"))) : AnyView(Circle().stroke(lineWidth: 3).fill(Color("Gray"))))
+                .background(fill ? AnyView(Circle().fill(Color("Gray"))) : AnyView(Circle().stroke(lineWidth: 3).fill(Color("Gray")).opacity(0.3)))
                 .disabled(!isActive)
             }
         case .rectangle:
@@ -89,7 +89,7 @@ struct StylizedButton: View {
                 .foregroundColor(fill ? Color("White") : Color("Gray"))
                 .frame(width: width, height: height, alignment: .center)
                 .padding()
-                .background(fill ? AnyView(Rectangle().fill(Color("Gray"))) : AnyView(Rectangle().stroke(lineWidth: 3).fill(Color("Gray"))))
+                .background(fill ? AnyView(Rectangle().fill(Color("Gray"))) : AnyView(Rectangle().stroke(lineWidth: 3).fill(Color("Gray")).opacity(0.3)))
                 .disabled(!isActive)
             }
         }

@@ -31,7 +31,7 @@ struct StopWatchView: View {
                       maxTickLabel: 0,
                       font: .caption,
                       width: UIScreen.main.bounds.width/3.5)
-                .offset(y: -80)
+                .offset(y: -70)
             
             Text(flowTimeManager.totalTime.formatted)
                 .font(.title2.monospacedDigit())

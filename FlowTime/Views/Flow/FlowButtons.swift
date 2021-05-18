@@ -22,7 +22,7 @@ struct FlowButtons: View {
             VStack {
                 HStack {
                     Spacer()
-                    StylizedButton(action: {flowTimeManager.pauseFlow()}, systemImage: "pause.fill", text: nil, width: 20, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.pauseFlow()}, systemImage: "pause.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
                         .padding([.leading, .trailing])
                 }
                 Spacer()
@@ -30,10 +30,10 @@ struct FlowButtons: View {
         case .paused:
             VStack {
                 HStack {
-                    StylizedButton(action: {flowTimeManager.startRest()}, systemImage: "moon.fill", text: nil, width: 20, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.startRest()}, systemImage: "moon.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
                         .padding([.leading, .trailing])
                     Spacer()
-                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "play.fill", text: nil, width: 20, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "play.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
                         .padding([.leading, .trailing])
                 }
                 Spacer()
@@ -43,7 +43,7 @@ struct FlowButtons: View {
             VStack {
                 HStack {
                     Spacer()
-                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "forward.fill", text: nil, width: 20, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "forward.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
                         .padding([.leading, .trailing])
                 }
                 Spacer()

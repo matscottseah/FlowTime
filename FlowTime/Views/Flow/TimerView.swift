@@ -31,7 +31,7 @@ struct TimerView: View {
                       maxTickLabel: 12,
                       font: .caption,
                       width: UIScreen.main.bounds.width/3.5)
-                .offset(x: -80)
+                .offset(x: -70)
             
             //  Minutes
             ClockView(majorTickCount: 12,
@@ -42,7 +42,7 @@ struct TimerView: View {
                       maxTickLabel: 60,
                       font: .caption,
                       width: UIScreen.main.bounds.width/3.5)
-                .offset(x: 80)
+                .offset(x: 70)
             
             Text(flowTimeManager.totalTime.formatted)
                 .font(.title2.monospacedDigit())
