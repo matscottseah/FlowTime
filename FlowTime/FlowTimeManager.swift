@@ -82,6 +82,9 @@ class FlowTimeManager: ObservableObject {
     @Published private var restData: RestData?
     
     private var timer: Timer?
+    private var task: Task?
+    private var flow: Flow?
+    private var rest: Rest?
 
     var totalTime: TimeInterval {
         switch mode {
@@ -95,75 +98,117 @@ class FlowTimeManager: ObservableObject {
     }
 
     func startTask() {
-//        task = TaskController.createTask(taskName: taskName, startTime: Date().timeIntervalSinceReferenceDate)
+        /* TaskData */
         taskData = TaskData()
         taskData!.start(at: Date().timeIntervalSinceReferenceDate)
         
-        /* starting a new task automatically triggers a flow */
+        /* core data */
+        task = TaskController.createTask(startTime: Date(), taskName: taskName)
+        
+        /* new task triggers new flow */
         startFlow()
     }
 
     func stopTask() {
-//        task = TaskController.completeTask(task: task!, stopTime: currentTime)
+        /* core data */
+        if let task = task {
+            var _  = TaskController.completeTask(task: task, stopTime: Date())
+        }
+        task = nil
         
-        reset()
+        /* stop TaskData */
         taskData?.stop()
         taskData = nil
+        
+        /* cleanup */
+        reset()
+        
         mode = .stopped
     }
 
     func startFlow() {
-        /* it's possible that we are coming from a resting state so stop the rest before proceeding with the flow */
-        stopRest()
+        /* stop Rest */
+        if (restData != nil) {
+            stopRest()
+        }
         
-        /* if we are coming from a paused state we do no need to declare a new FlowData object */
+        /* init FlowData */
         if (flowData == nil) {
             flowData = FlowData()
             flowCount += 1
+            
+            /* core data*/
+            if let task = task {
+                flow = FlowController.createFlow(task: task, startTime: Date())
+            }
         }
 
+        /* start FlowData */
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
             self.flowData!.currentTime = Date().timeIntervalSinceReferenceDate
         }
-
         flowData!.start(at: Date().timeIntervalSinceReferenceDate)
+        
         mode = .flowing
-//        flow = FlowController.createFlow(task: task!, startTime: startTime)
     }
     
     func pauseFlow() {
+        /* stop FlowData */
         timer?.invalidate()
         timer = nil
         flowData?.stop()
+        
         mode = .paused
     }
 
     func stopFlow() {
+        /* core data */
+        if let flow = flow {
+            var _ = FlowController.completeFlow(flow: flow, stopTime: Date())
+        }
+        
         flowData = nil
+        flow = nil
     }
 
     func startRest() {
-        /* stop the flow before proceeding with the rest */
-        stopFlow()
+        let restTime: TimeInterval = calculateRestTime()
         
+        /* stop Flow */
+        if (flowData != nil) {
+            stopFlow()
+        }
+        
+        /* RestData */
         restData = RestData()
-
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
             self.restData!.currentTime = Date().timeIntervalSinceReferenceDate
         }
-
-        let restTime: TimeInterval = calculateRestTime()
         restData!.start(at: Date().timeIntervalSinceReferenceDate, restTime: restTime)
-        mode = .resting
+        
+        /* core data */
+        if let task = task {
+            rest = RestController.createRest(task: task, startTime: Date())
+        }
         
         restCount += 1
+        
+        mode = .resting
     }
 
     func stopRest() {
+        /* stop RestData */
         timer?.invalidate()
         timer = nil
         restData?.stop()
         restData = nil
+        
+        /* core data */
+        if let rest = rest {
+            var _ = RestController.completeRest(rest: rest, stopTime: Date())
+        }
+        
+        rest = nil
     }
     
     

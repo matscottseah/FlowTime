@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0DD44426579A58004A101B /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DD44326579A58004A101B /* TaskController.swift */; };
+		BC0DD44626579A62004A101B /* RestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DD44526579A62004A101B /* RestController.swift */; };
+		BC0DD4482658BFF4004A101B /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DD4472658BFF4004A101B /* Predicates.swift */; };
 		BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC119DC0262182A8001F56EA /* TaskTextField.swift */; };
 		BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC119E2B2624F7B8001F56EA /* FlowTime.xcdatamodeld */; };
 		BC119E332624F991001F56EA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC119E322624F991001F56EA /* PersistenceController.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0DD44326579A58004A101B /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		BC0DD44526579A62004A101B /* RestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestController.swift; sourceTree = "<group>"; };
+		BC0DD4472658BFF4004A101B /* Predicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicates.swift; sourceTree = "<group>"; };
 		BC119DC0262182A8001F56EA /* TaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextField.swift; sourceTree = "<group>"; };
 		BC119E2C2624F7B8001F56EA /* FlowTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowTime.xcdatamodel; sourceTree = "<group>"; };
 		BC119E322624F991001F56EA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -114,7 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				BC119E322624F991001F56EA /* PersistenceController.swift */,
+				BC0DD44326579A58004A101B /* TaskController.swift */,
 				BC85715726268ACF0058087F /* FlowController.swift */,
+				BC0DD44526579A62004A101B /* RestController.swift */,
+				BC0DD4472658BFF4004A101B /* Predicates.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,8 +156,8 @@
 				BC8571722627E48E0058087F /* Helper.swift */,
 				BC29F81D261D2F3100E7D18D /* Views */,
 				BC119E312624F97C001F56EA /* Controllers */,
-				BC29F7BC26183F5500E7D18D /* Assets.xcassets */,
 				BC119E2B2624F7B8001F56EA /* FlowTime.xcdatamodeld */,
+				BC29F7BC26183F5500E7D18D /* Assets.xcassets */,
 				BC29F7C126183F5500E7D18D /* Info.plist */,
 				BC29F7BE26183F5500E7D18D /* Preview Content */,
 			);
@@ -370,6 +379,7 @@
 				BC86CEF72640DEF500BA59F0 /* ClockHandView.swift in Sources */,
 				BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */,
 				BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */,
+				BC0DD44626579A62004A101B /* RestController.swift in Sources */,
 				BC85716B2626BD600058087F /* TodayView.swift in Sources */,
 				BC80D22A26509CD900048694 /* StopWatchView.swift in Sources */,
 				BCFFE15E2640D33D008C46D7 /* ClockFaceView.swift in Sources */,
@@ -382,9 +392,11 @@
 				BC4379A1263B68B400C3476F /* TaskView.swift in Sources */,
 				BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */,
 				BCD53D352646575900B0FAB8 /* StylizedButton.swift in Sources */,
+				BC0DD44426579A58004A101B /* TaskController.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
 				BCD53D332646567400B0FAB8 /* FlowButtons.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
+				BC0DD4482658BFF4004A101B /* Predicates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
