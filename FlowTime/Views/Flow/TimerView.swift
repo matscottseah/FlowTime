@@ -44,7 +44,7 @@ struct TimerView: View {
                       width: UIScreen.main.bounds.width/3.5)
                 .offset(x: 70)
             
-            Text(flowTimeManager.totalTime.formatted)
+            Text(flowTimeManager.totalTime.formattedHMS)
                 .font(.title2.monospacedDigit())
                 .offset(y: 80)
         }

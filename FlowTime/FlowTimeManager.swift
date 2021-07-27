@@ -103,7 +103,7 @@ class FlowTimeManager: ObservableObject {
         taskData!.start(at: Date().timeIntervalSinceReferenceDate)
         
         /* core data */
-        task = TaskController.createTask(startTime: Date(), taskName: taskName)
+        task = TaskController.createTaskWith(startTime: Date(), taskName: taskName)
         
         /* new task triggers new flow */
         startFlow()
@@ -112,7 +112,7 @@ class FlowTimeManager: ObservableObject {
     func stopTask() {
         /* core data */
         if let task = task {
-            var _  = TaskController.completeTask(task: task, stopTime: Date())
+            var _  = TaskController.complete(task: task, stopTime: Date())
         }
         task = nil
         
@@ -139,7 +139,7 @@ class FlowTimeManager: ObservableObject {
             
             /* core data*/
             if let task = task {
-                flow = FlowController.createFlow(task: task, startTime: Date())
+                flow = FlowController.createFlowFor(task: task, startTime: Date())
             }
         }
 
@@ -164,7 +164,7 @@ class FlowTimeManager: ObservableObject {
     func stopFlow() {
         /* core data */
         if let flow = flow {
-            var _ = FlowController.completeFlow(flow: flow, stopTime: Date())
+            var _ = FlowController.complete(flow: flow, stopTime: Date())
         }
         
         flowData = nil
@@ -188,7 +188,7 @@ class FlowTimeManager: ObservableObject {
         
         /* core data */
         if let task = task {
-            rest = RestController.createRest(task: task, startTime: Date())
+            rest = RestController.createRestFor(task: task, startTime: Date())
         }
         
         restCount += 1
@@ -205,7 +205,7 @@ class FlowTimeManager: ObservableObject {
         
         /* core data */
         if let rest = rest {
-            var _ = RestController.completeRest(rest: rest, stopTime: Date())
+            var _ = RestController.complete(rest: rest, stopTime: Date())
         }
         
         rest = nil

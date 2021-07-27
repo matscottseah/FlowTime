@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,18 +22,19 @@
 		BC29F7E7261840BE00E7D18D /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7E6261840BE00E7D18D /* FlowView.swift */; };
 		BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7EB261840D400E7D18D /* AnalyticsView.swift */; };
 		BC29F7FA2618476400E7D18D /* FlowTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F7F92618476400E7D18D /* FlowTimeManager.swift */; };
-		BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29F824261D303D00E7D18D /* StartStopButton.swift */; };
 		BC4379A1263B68B400C3476F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4379A0263B68B400C3476F /* TaskView.swift */; };
 		BC58FC32263D2D060041DF7F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58FC31263D2D060041DF7F /* ClockView.swift */; };
+		BC6D38B62669BB4700C22FFA /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = BC6D38B52669BB4700C22FFA /* SwiftUICharts */; };
+		BC6D38B8266D190000C22FFA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D38B7266D190000C22FFA /* DetailView.swift */; };
+		BC6D38BA266D1FCA00C22FFA /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D38B9266D1FCA00C22FFA /* SummaryView.swift */; };
 		BC80D22A26509CD900048694 /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC80D22926509CD900048694 /* StopWatchView.swift */; };
 		BC80D22C26509CE100048694 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC80D22B26509CE100048694 /* TimerView.swift */; };
 		BC85715826268ACF0058087F /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85715726268ACF0058087F /* FlowController.swift */; };
-		BC85716B2626BD600058087F /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85716A2626BD600058087F /* TodayView.swift */; };
 		BC8571732627E48E0058087F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571722627E48E0058087F /* Helper.swift */; };
-		BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8571A1262AA7680058087F /* TodayViewitem.swift */; };
 		BC86CEF72640DEF500BA59F0 /* ClockHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86CEF62640DEF500BA59F0 /* ClockHandView.swift */; };
 		BCD53D332646567400B0FAB8 /* FlowButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD53D322646567400B0FAB8 /* FlowButtons.swift */; };
 		BCD53D352646575900B0FAB8 /* StylizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD53D342646575900B0FAB8 /* StylizedButton.swift */; };
+		BCF99E61267487D9005D4AB5 /* StackedBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF99E60267487D9005D4AB5 /* StackedBarChartView.swift */; };
 		BCFFE15E2640D33D008C46D7 /* ClockFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFFE15D2640D33D008C46D7 /* ClockFaceView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,19 @@
 			remoteInfo = FlowTime;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC6D38B02669B73B00C22FFA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BC0DD44326579A58004A101B /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
@@ -76,18 +90,18 @@
 		BC29F7E6261840BE00E7D18D /* FlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		BC29F7EB261840D400E7D18D /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		BC29F7F92618476400E7D18D /* FlowTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTimeManager.swift; sourceTree = "<group>"; };
-		BC29F824261D303D00E7D18D /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
 		BC4379A0263B68B400C3476F /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		BC58FC31263D2D060041DF7F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		BC6D38B7266D190000C22FFA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BC6D38B9266D1FCA00C22FFA /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		BC80D22926509CD900048694 /* StopWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
 		BC80D22B26509CE100048694 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BC85715726268ACF0058087F /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
-		BC85716A2626BD600058087F /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		BC8571722627E48E0058087F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		BC8571A1262AA7680058087F /* TodayViewitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewitem.swift; sourceTree = "<group>"; };
 		BC86CEF62640DEF500BA59F0 /* ClockHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandView.swift; sourceTree = "<group>"; };
 		BCD53D322646567400B0FAB8 /* FlowButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowButtons.swift; sourceTree = "<group>"; };
 		BCD53D342646575900B0FAB8 /* StylizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylizedButton.swift; sourceTree = "<group>"; };
+		BCF99E60267487D9005D4AB5 /* StackedBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedBarChartView.swift; sourceTree = "<group>"; };
 		BCFFE15D2640D33D008C46D7 /* ClockFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6D38B62669BB4700C22FFA /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +213,6 @@
 				BC80D22926509CD900048694 /* StopWatchView.swift */,
 				BC80D22B26509CE100048694 /* TimerView.swift */,
 				BCFFE15A2640D24A008C46D7 /* Clock */,
-				BC29F824261D303D00E7D18D /* StartStopButton.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -207,8 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				BC29F7EB261840D400E7D18D /* AnalyticsView.swift */,
-				BC85716A2626BD600058087F /* TodayView.swift */,
-				BC8571A1262AA7680058087F /* TodayViewitem.swift */,
+				BC6D38B9266D1FCA00C22FFA /* SummaryView.swift */,
+				BC6D38B7266D190000C22FFA /* DetailView.swift */,
+				BCF99E60267487D9005D4AB5 /* StackedBarChartView.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -254,12 +269,16 @@
 				BC29F7B126183F5500E7D18D /* Sources */,
 				BC29F7B226183F5500E7D18D /* Frameworks */,
 				BC29F7B326183F5500E7D18D /* Resources */,
+				BC6D38B02669B73B00C22FFA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FlowTime;
+			packageProductDependencies = (
+				BC6D38B52669BB4700C22FFA /* SwiftUICharts */,
+			);
 			productName = FlowTime;
 			productReference = BC29F7B526183F5500E7D18D /* FlowTime.app */;
 			productType = "com.apple.product-type.application";
@@ -331,6 +350,9 @@
 				Base,
 			);
 			mainGroup = BC29F7AC26183F5400E7D18D;
+			packageReferences = (
+				BC6D38B42669BB4700C22FFA /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+			);
 			productRefGroup = BC29F7B626183F5500E7D18D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6D38B8266D190000C22FFA /* DetailView.swift in Sources */,
 				BC80D22C26509CE100048694 /* TimerView.swift in Sources */,
 				BC29F7E7261840BE00E7D18D /* FlowView.swift in Sources */,
 				BC58FC32263D2D060041DF7F /* ClockView.swift in Sources */,
@@ -380,20 +403,19 @@
 				BC119DC1262182A8001F56EA /* TaskTextField.swift in Sources */,
 				BC119E2D2624F7B8001F56EA /* FlowTime.xcdatamodeld in Sources */,
 				BC0DD44626579A62004A101B /* RestController.swift in Sources */,
-				BC85716B2626BD600058087F /* TodayView.swift in Sources */,
 				BC80D22A26509CD900048694 /* StopWatchView.swift in Sources */,
 				BCFFE15E2640D33D008C46D7 /* ClockFaceView.swift in Sources */,
 				BC85715826268ACF0058087F /* FlowController.swift in Sources */,
 				BC8571732627E48E0058087F /* Helper.swift in Sources */,
+				BC6D38BA266D1FCA00C22FFA /* SummaryView.swift in Sources */,
 				BC29F7EC261840D400E7D18D /* AnalyticsView.swift in Sources */,
 				BC119E332624F991001F56EA /* PersistenceController.swift in Sources */,
 				BC29F7FA2618476400E7D18D /* FlowTimeManager.swift in Sources */,
-				BC29F825261D303D00E7D18D /* StartStopButton.swift in Sources */,
 				BC4379A1263B68B400C3476F /* TaskView.swift in Sources */,
-				BC8571A2262AA7680058087F /* TodayViewitem.swift in Sources */,
 				BCD53D352646575900B0FAB8 /* StylizedButton.swift in Sources */,
 				BC0DD44426579A58004A101B /* TaskController.swift in Sources */,
 				BC29F7BB26183F5500E7D18D /* ContentView.swift in Sources */,
+				BCF99E61267487D9005D4AB5 /* StackedBarChartView.swift in Sources */,
 				BCD53D332646567400B0FAB8 /* FlowButtons.swift in Sources */,
 				BC29F7B926183F5500E7D18D /* FlowTimeApp.swift in Sources */,
 				BC0DD4482658BFF4004A101B /* Predicates.swift in Sources */,
@@ -712,6 +734,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BC6D38B42669BB4700C22FFA /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC6D38B52669BB4700C22FFA /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC6D38B42669BB4700C22FFA /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		BC119E2B2624F7B8001F56EA /* FlowTime.xcdatamodeld */ = {

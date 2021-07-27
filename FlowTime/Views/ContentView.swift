@@ -25,10 +25,9 @@ struct ContentView: View {
                             FlowView()
                         }
                     case 1:
-    //                    AnalyticsView()
-                        EmptyView()
+                        AnalyticsView()
                     default:
-                        Text("Default")
+                        EmptyView()
                     }
                 }
                 

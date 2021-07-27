@@ -1,33 +1,36 @@
-////
-////  AnalyticsView.swift
-////  FlowTime
-////
-////  Created by Matthew Seah on 4/2/21.
-////
 //
-//import SwiftUI
+//  AnalyticsView.swift
+//  FlowTime
 //
-//struct AnalyticsView: View {
-////    @EnvironmentObject var flowTimeManager: FlowTimeManager
-//    var flows = FlowController.getAllFlows()
-//    
-//    var body: some View {
-//        VStack {
-//            TodayView()
-//                .padding()
-//            
-//            List {
-//                ForEach(flows) { (flow: Flow) in
-//                    Text("unknown")
-//                }
-//            }
-//        }
-//    }
-//}
+//  Created by Matthew Seah on 4/2/21.
 //
-//struct AnalyticsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AnalyticsView()
-////            .environmentObject(FlowTimeManager())
-//    }
-//}
+
+import SwiftUI
+
+enum Granularity {
+    case day
+    case week
+    case month
+    case overview
+}
+
+struct AnalyticsView: View {
+    @EnvironmentObject var flowTimeManager: FlowTimeManager
+    @State private var granularity: Granularity = .week
+    
+    var body: some View {
+        VStack() {
+            SummaryView(granularity: $granularity)
+                .padding(.bottom)
+            
+            DetailView(granularity: $granularity)
+        }
+    }
+}
+
+struct AnalyticsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AnalyticsView()
+            .environmentObject(FlowTimeManager())
+    }
+}

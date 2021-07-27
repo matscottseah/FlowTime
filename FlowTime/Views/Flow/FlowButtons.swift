@@ -22,7 +22,7 @@ struct FlowButtons: View {
             VStack {
                 HStack {
                     Spacer()
-                    StylizedButton(action: {flowTimeManager.pauseFlow()}, systemImage: "pause.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.pauseFlow()}, systemImage: "pause.fill", text: nil, width: 30, height: nil, fill: false, style: .circle)
                         .padding([.leading, .trailing])
                 }
                 Spacer()
@@ -30,24 +30,24 @@ struct FlowButtons: View {
         case .paused:
             VStack {
                 HStack {
-                    StylizedButton(action: {flowTimeManager.startRest()}, systemImage: "moon.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.startRest()}, systemImage: "moon.fill", text: nil, width: 30, height: nil, fill: false, style: .circle)
                         .padding([.leading, .trailing])
                     Spacer()
-                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "play.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "play.fill", text: nil, width: 30, height: nil, fill: false, style: .circle)
                         .padding([.leading, .trailing])
                 }
                 Spacer()
-                StylizedButton(action: {flowTimeManager.stopTask()}, systemImage: nil, text: "Complete Task", width: UIScreen.main.bounds.width / 2, height: nil, fill: true, style: .capsule, isActive: true)
+                StylizedButton(action: {flowTimeManager.stopTask()}, systemImage: nil, text: "Complete Task", width: UIScreen.main.bounds.width / 2, height: nil, fill: true, style: .capsule)
             }
         case .resting:
             VStack {
                 HStack {
                     Spacer()
-                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "forward.fill", text: nil, width: 30, height: nil, fill: false, style: .circle, isActive: true)
+                    StylizedButton(action: {flowTimeManager.startFlow()}, systemImage: "forward.fill", text: nil, width: 30, height: nil, fill: false, style: .circle)
                         .padding([.leading, .trailing])
                 }
                 Spacer()
-                StylizedButton(action: {flowTimeManager.stopTask()}, systemImage: nil, text: "Complete Task", width: UIScreen.main.bounds.width / 2, height: nil, fill: true, style: .capsule, isActive: true)
+                StylizedButton(action: {flowTimeManager.stopTask()}, systemImage: nil, text: "Complete Task", width: UIScreen.main.bounds.width / 2, height: nil, fill: true, style: .capsule)
             }
         default:
             EmptyView()

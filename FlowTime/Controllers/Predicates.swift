@@ -7,16 +7,29 @@
 
 import CoreData
 
-func DatePredicate(date: Date) -> NSPredicate {
-    var calendar = Calendar.current
-    calendar.timeZone = NSTimeZone.local
+func DayPredicateFor(date: Date) -> NSPredicate {
+    let fromPredicate = NSPredicate(format: "startTime >= %@", date.startOfDay as NSDate)
+    let toPredicate = NSPredicate(format: "startTime <= %@", date.endOfDay as NSDate)
+    return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+}
 
-    let dateFrom = calendar.startOfDay(for: date)
-    let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
+func PastWeekPredicateFor(date: Date) -> NSPredicate {
+    let dateFrom = Calendar.current.date(byAdding: .day, value: -7, to: date.startOfDay)
+    let fromPredicate = NSPredicate(format: "startTime >= %@", dateFrom! as NSDate)
+    let toPredicate = NSPredicate(format: "startTime < %@", date.startOfDay as NSDate)
+    return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+}
 
-    let fromPredicate = NSPredicate(format: "%@ >= %@", date as NSDate, dateFrom as NSDate)
-    let toPredicate = NSPredicate(format: "%@ < %@", date as NSDate, dateTo! as NSDate)
-    let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+func WeekPredicateFor(date: Date, offset: Int) -> NSPredicate {
+    let dateFrom = Calendar.current.date(byAdding: .day, value: -7 * offset, to: date.startOfWeek)
+    let fromPredicate = NSPredicate(format: "startTime >= %@", dateFrom! as NSDate)
+    let toPredicate = NSPredicate(format: "startTime <= %@", dateFrom!.endOfWeek.endOfDay as NSDate)
+    return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+}
 
-    return datePredicate
+func MonthPredicateFor(date: Date, offset: Int) -> NSPredicate {
+    let dateFrom = Calendar.current.date(byAdding: .month, value: -1 * offset, to: date.startOfMonth)
+    let fromPredicate = NSPredicate(format: "startTime >= %@", dateFrom! as NSDate)
+    let toPredicate = NSPredicate(format: "startTime <= %@", dateFrom!.endOfMonth.endOfDay as NSDate)
+    return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
 }

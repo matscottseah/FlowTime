@@ -22,31 +22,44 @@ struct PersistenceController {
         let controller = PersistenceController(inMemory: true)
         let context = controller.container.viewContext
         
-        var calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
+        let calendar = Calendar.current
+        let today = Date()
         
-        let now = Date()
+        for i in 0..<90 {
+            let rand = Int.random(in: 1...3)
+            for j in 0..<rand {
+                let dateWithOffset = calendar.date(byAdding: .day, value: -1 * i, to: today)?.startOfDay
+                
+                let task = Task(context: context)
+                task.id = UUID()
+                task.startTime = dateWithOffset
+                task.task = "Task \(i)"
 
-        for i in 0..<10 {
-            let task = Task(context: context)
-            task.id = UUID()
-            task.startTime = calendar.date(byAdding: DateComponents(hour: i, minute: i, second: i), to: now)
-            task.task = "Task \(i)"
-            
-            let flow1 = Flow(context: context)
-            flow1.id = UUID()
-            flow1.startTime = task.startTime
-            flow1.stopTime = calendar.date(byAdding: DateComponents(hour: i, minute: i, second: i), to: flow1.startTime!)
-            
-            let rest1 = Rest(context: context)
-            rest1.id = UUID()
-            rest1.startTime = flow1.stopTime
-            rest1.recommendedTime = Double.random(in: 1...25)
-            rest1.stopTime = calendar.date(byAdding: DateComponents(hour: i, minute: i, second: i), to: rest1.startTime!)
-            
-            task.stopTime = rest1.stopTime
+                let flow = Flow(context: context)
+                flow.id = UUID()
+                flow.startTime = task.startTime
+                flow.stopTime = calendar.date(byAdding: .hour, value: Int.random(in: 0...6), to: flow.startTime!)
+                flow.stopTime = calendar.date(byAdding: .minute, value: Int.random(in: 0...60), to: flow.stopTime!)
+                
+                let rest = Rest(context: context)
+                rest.id = UUID()
+                rest.startTime = flow.stopTime
+                rest.recommendedTime = Double.random(in: 1...25)
+                rest.stopTime = calendar.date(byAdding: .minute, value: Int.random(in: 0...60), to: rest.startTime!)
+                
+                task.stopTime = rest.stopTime
+                let _ = TaskController.addFlowFor(task: task, flow: flow)
+                let _ = TaskController.addRestFor(task: task, rest: rest)
+            }
         }
-
+        
+        do {
+            try context.save()
+        } catch {
+            let saveError = error as NSError
+            fatalError("Unresolved error \(saveError), \(saveError.userInfo)")
+        }
+        
         return controller
     }()
 

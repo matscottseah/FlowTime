@@ -29,7 +29,8 @@ struct TaskView: View {
             TaskTextField()
                 .padding(.bottom)
             
-            StylizedButton(action: {flowTimeManager.startTask()}, systemImage: nil, text: "start", width: UIScreen.main.bounds.width/2, height: nil, fill: true, style: .capsule, isActive: true)
+            StylizedButton(action: {flowTimeManager.startTask()}, systemImage: nil, text: "start", width: UIScreen.main.bounds.width/2, height: nil, fill: true, style: .capsule)
+                .disabled(flowTimeManager.taskName.isEmpty)
         }
         .padding(.bottom, 100)
         .navigationBarHidden(true)

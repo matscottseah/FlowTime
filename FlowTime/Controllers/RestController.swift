@@ -8,25 +8,25 @@
 import CoreData
 
 class RestController {
-    static func createRest(task: Task, startTime: Date) -> Rest {
+    static func createRestFor(task: Task, startTime: Date) -> Rest {
         let rest = Rest(context: viewContext)
         rest.id = UUID()
         rest.startTime = startTime
         var _ = PersistenceController.shared.save()
 
-        var _ = TaskController.addRest(task: task, rest: rest)
+        var _ = TaskController.addRestFor(task: task, rest: rest)
         
         return rest
     }
 
-    static func completeRest(rest: Rest, stopTime: Date) -> Rest {
+    static func complete(rest: Rest, stopTime: Date) -> Rest {
         rest.stopTime = stopTime
 
         var _ = PersistenceController.shared.save()
         return rest
     }
     
-    static func deleteRest(rest: Rest) -> Bool {
+    static func delete(rest: Rest) -> Bool {
         viewContext.delete(rest)
         return PersistenceController.shared.save()
     }
@@ -44,11 +44,10 @@ class RestController {
         return rests
     }
 
-    static func getRestsByDate(date: Date) -> [Rest] {
+    static func getRestsBy(date: Date) -> [Rest] {
         let rests: [Rest]
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Rest")
-
-        fetchRequest.predicate = DatePredicate(date: date)
+        fetchRequest.predicate = DayPredicateFor(date: date)
 
         do {
             rests = try viewContext.fetch(fetchRequest) as! [Rest]
@@ -58,25 +57,85 @@ class RestController {
 
         return rests
     }
-
-    static func getTotalRestsByDate(date: Date) -> Int {
-        let rests = self.getRestsByDate(date: date)
-        return rests.count
+    
+    static func getTotalRestsBy(date: Date) -> Int {
+        return self.getRestsBy(date: date).count
     }
 
-    static func getTotalRestTimeByDate(date: Date) -> TimeInterval {
-        var calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-
-        let rests = self.getRestsByDate(date: date)
-
-        var totalTime: Double = 0
+    static func getTotalRestTimeBy(date: Date) -> TimeInterval {
+        let rests = self.getRestsBy(date: date)
+        var totalTime: TimeInterval = 0
         for rest in rests {
-            if let startTime = rest.startTime, let stopTime = rest.stopTime {
-                totalTime += stopTime.timeIntervalSince(startTime)
-            }
+            totalTime += (rest.stopTime! - rest.startTime!)
         }
 
         return totalTime
+    }
+    
+    static func getRestsForPastWeek() -> [Rest] {
+        let rests: [Rest]
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Rest")
+        fetchRequest.predicate = PastWeekPredicateFor(date: Date())
+
+        do {
+            rests = try viewContext.fetch(fetchRequest) as! [Rest]
+        } catch {
+            fatalError("Failed to fetch rests: \(error)")
+        }
+
+        return rests
+    }
+    
+    static func getRestsForWeekWith(offset: Int) -> [Rest] {
+        let rests: [Rest]
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Rest")
+        fetchRequest.predicate = WeekPredicateFor(date: Date(), offset: offset)
+
+        do {
+            rests = try viewContext.fetch(fetchRequest) as! [Rest]
+        } catch {
+            fatalError("Failed to fetch rests: \(error)")
+        }
+
+        return rests
+    }
+    
+    static func getRestTimesForWeekWith(offset: Int) -> [TimeInterval] {
+        let restsForWeek = self.getRestsForWeekWith(offset: offset).sorted(by: {$0.startTime!})
+        var restTimes: [TimeInterval] = [Double](repeating: 0.0, count: 7)
+        
+        for rest in restsForWeek {
+            guard let day = Calendar.current.dateComponents([.weekday], from: rest.startTime!).weekday else { continue }
+            restTimes[day - 1] += (rest.stopTime! - rest.startTime!)
+        }
+        
+        return restTimes
+    }
+    
+    static func getRestsForMonthWith(offset: Int) -> [Rest] {
+        let rests: [Rest]
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Rest")
+        fetchRequest.predicate = MonthPredicateFor(date: Date(), offset: offset)
+
+        do {
+            rests = try viewContext.fetch(fetchRequest) as! [Rest]
+        } catch {
+            fatalError("Failed to fetch rests: \(error)")
+        }
+
+        return rests
+    }
+    
+    static func getRestTimesForMonthWith(offset: Int) -> [TimeInterval] {
+        let restsForMonth = self.getRestsForMonthWith(offset: offset).sorted(by: {$0.startTime!})
+        var restTimes: [TimeInterval] = [Double](repeating: 0.0, count: 5)
+        var currentWeek = 0
+        
+        for rest in restsForMonth {
+            let week = weekOfMonthFrom(date: rest.startTime!)
+            restTimes[week - 1] += (rest.stopTime! - rest.startTime!)
+        }
+        
+        return restTimes
     }
 }
